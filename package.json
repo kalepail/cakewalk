@@ -1,0 +1,24 @@
+{
+  "name": "cakewalk",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "start": "wrangler dev"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240117.0",
+    "typescript": "^5.3.3",
+    "wrangler": "^3.25.0",
+    "cakewalk-sdk": "file:./cakewalk-sdk",
+    "@vespaiach/axios-fetch-adapter": "^0.3.1",
+    "axios": "^0.26.1",
+    "@stellar/stellar-sdk": "git+https://github.com/kalepail/js-stellar-sdk.git#c453b06f6afaf133a157bab523310f5409669af5"
+  },
+  "overrides": {
+    "@stellar/stellar-sdk": {
+      "axios": "$axios"
+    }
+  }
+}

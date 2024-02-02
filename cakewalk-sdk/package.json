@@ -1,0 +1,27 @@
+{
+    "version": "0.0.0",
+    "name": "@tinyanvil/cakewalk-sdk",
+    "dependencies": {
+        "@stellar/freighter-api": "1.7.1",
+        "buffer": "6.0.3",
+        "@vespaiach/axios-fetch-adapter": "^0.3.1",
+        "axios": "^0.26.1",
+        "@stellar/stellar-sdk": "git+https://github.com/kalepail/js-stellar-sdk.git#c453b06f6afaf133a157bab523310f5409669af5"
+    },
+    "overrides": {
+      "@stellar/stellar-sdk": {
+        "axios": "$axios"
+      }
+    },
+    "scripts": {
+        "build": "node ./scripts/build.mjs"
+    },
+    "exports": {
+        "require": "./dist/cjs/index.js",
+        "import": "./dist/esm/index.js"
+    },
+    "typings": "dist/types/index.d.ts",
+    "devDependencies": {
+        "typescript": "5.3.3"
+    }
+}
