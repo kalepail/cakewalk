@@ -99,7 +99,11 @@ export default {
 
 						if (canvas)
 							html += `<pre style="order: ${index};"><code>
-								${canvas.replace(/\n$/, ` ${name}`)}
+								${canvas
+									.replace(/\n$/, ` ${name}`)
+									.replace(/</, `&lt;`)
+									.replace(/>/, `&gt;`)
+								}
 							</code></pre>`
 	
 						resolve(null)
